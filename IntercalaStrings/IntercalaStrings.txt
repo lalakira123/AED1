@@ -1,0 +1,4 @@
+15
+bcdfghjklmntvxz
+5
+aeiou

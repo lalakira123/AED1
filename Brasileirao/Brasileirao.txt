@@ -1,0 +1,37 @@
+6
+Equipe-A
+Equipe-B
+Equipe-C
+Equipe-D
+Equipe-E
+Equipe-F
+Equipe-A 1 x 3 Equipe-B
+Equipe-A 4 x 1 Equipe-C
+Equipe-A 0 x 0 Equipe-D
+Equipe-A 4 x 2 Equipe-E
+Equipe-A 5 x 4 Equipe-F
+Equipe-B 1 x 0 Equipe-A
+Equipe-B 0 x 1 Equipe-C
+Equipe-B 2 x 2 Equipe-D
+Equipe-B 3 x 4 Equipe-E
+Equipe-B 0 x 0 Equipe-F
+Equipe-C 3 x 4 Equipe-A
+Equipe-C 4 x 4 Equipe-B
+Equipe-C 1 x 0 Equipe-D
+Equipe-C 1 x 0 Equipe-E
+Equipe-C 4 x 3 Equipe-F
+Equipe-D 1 x 4 Equipe-A
+Equipe-D 3 x 0 Equipe-B
+Equipe-D 4 x 4 Equipe-C
+Equipe-D 1 x 1 Equipe-E
+Equipe-D 4 x 4 Equipe-F
+Equipe-E 1 x 5 Equipe-A
+Equipe-E 4 x 0 Equipe-B
+Equipe-E 0 x 0 Equipe-C
+Equipe-E 4 x 4 Equipe-D
+Equipe-E 1 x 1 Equipe-F
+Equipe-F 3 x 1 Equipe-A
+Equipe-F 1 x 4 Equipe-B
+Equipe-F 1 x 1 Equipe-C
+Equipe-F 1 x 0 Equipe-D
+Equipe-F 0 x 1 Equipe-E
