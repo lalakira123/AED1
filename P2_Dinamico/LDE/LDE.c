@@ -50,7 +50,7 @@ struct tItem * buscar(struct tLista *l, int chave) {
         it = it->proximo;
     }
 
-    if(it->chave == chave) {
+    if(it != NULL && it->chave == chave) {
         return it;
     } else {
         return NULL;
