@@ -4,11 +4,11 @@
 struct tItem {
   int chave;
   struct tItem *proximo;
-}
+};
 
 struct tLista {
   struct tItem *primeiro;
-}
+};
 
 struct tLista * criarLista() {
   struct tLista *l = (struct tLista *)malloc(sizeof(struct tLista));
@@ -32,7 +32,7 @@ struct tItem * primeiro(struct tLista *l) {
 }
 
 void inserir(struct tLista *l, int chave) {
-  struct tItem *anterior = NULL, *atual = primeiro(chave);
+  struct tItem *anterior = NULL, *atual = primeiro(l);
   struct tItem *novo = criarItem(chave);
 
   while(atual != NULL) {
@@ -52,6 +52,7 @@ void mostrarLista(struct tLista *l) {
 
   while(it != NULL) {
     printf("%d%s", it->chave, it->proximo==NULL?"\n":" ");
+    it = it->proximo;
   } 
 }
 
@@ -65,14 +66,15 @@ struct tLista * inverteLista(struct tLista *l) {
   struct tItem *atual = primeiro(l);
   struct tLista *li = criarLista();
   while(atual != NULL) {
-    insereCabeca(li, atual->chave);
+    struct tItem *novo = criarItem(atual->chave);
+    insereCabeca(li, novo);
+    atual = atual->proximo;
   }
   return li;
 }
 
 int main() {
   int nL, nE, e;
-  struct tLista *li;
   scanf("%d", &nL);
 
   int i;
@@ -84,7 +86,7 @@ int main() {
       scanf("%d", &e);
       inserir(l, e);
     }
-    li = inverterLista(l);
+    struct tLista *li = inverteLista(l);
     mostrarLista(li);
   }
   
