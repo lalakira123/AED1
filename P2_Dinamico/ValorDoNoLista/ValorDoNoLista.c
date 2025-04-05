@@ -8,12 +8,14 @@ struct tItem {
 
 struct tLista {
   struct tItem *primeiro;
+  int quantidade;
 };
 
 struct tLista * criarLista() {
   struct tLista *l = (struct tLista *)malloc(sizeof(struct tLista));
   if(l != NULL) {
     l->primeiro = NULL;
+    l->quantidade = -1;
   }
   return l;
 }
@@ -45,19 +47,21 @@ void inserir(struct tLista *l, int chave) {
   } else {
     l->primeiro = novo;
   }
+
+  l->quantidade++;
 }
 
 int buscar(struct tLista *l, int chave) {
   struct tItem *it = primeiro(l);
-
-  while(it != NULL && it->chave != chave) {
+  int count = 0;
+  chave = l->quantidade - chave;
+  while(it != NULL && count != chave) {
     it = it->proximo;
+    count++;
   }
 
-  if(it != NULL && it->chave == chave) {
-    return 1;
-  } else {
-    return 0;
+  if(it != NULL) {
+    return it->chave;
   }
 }
 
@@ -79,7 +83,7 @@ int main() {
 
     scanf("%d", &nP);
     valor = buscar(l, nP);
-    printf("%d%s", valor, i==nL-1?"\n":" ");
+    printf("%d\n", valor);
   }
 
   return 0;
