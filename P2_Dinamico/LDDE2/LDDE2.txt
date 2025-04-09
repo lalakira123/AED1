@@ -1,0 +1,15 @@
+I A 50 
+I A 30 
+I A 70 
+I A 10 
+I A 90 
+M A 
+R A 
+I B 40 
+I B 20 
+I B 60 
+I B 0 
+I B 80 
+I B 100 
+M B 
+R B 
