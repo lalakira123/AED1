@@ -43,18 +43,24 @@ void mostrarListaInicioFinal(struct tLista *l) {
     struct tItem *it = primeiro(l);
 
     while(it != NULL) {
+        //printf("%d ", it->chave);
         printf("%d%s", it->chave, it->proximo==NULL?"\n":" ");
         it = it->proximo;
     }
+
+    //printf("\n");
 }
 
 void mostrarListaFinalInicio(struct tLista *l) {
     struct tItem *it = ultimo(l);
 
     while(it != NULL) {
+        //printf("%d ", it->chave);
         printf("%d%s", it->chave, it->anterior==NULL?"\n":" ");
         it = it->anterior;
     }
+
+    //printf("\n");
 }
 
 void inserirItem(struct tLista *l, int chave) {
@@ -65,7 +71,7 @@ void inserirItem(struct tLista *l, int chave) {
         atual = atual->proximo;
     }
 
-    if(atual != NULL && atual->chave == chave) return;
+    //if(atual != NULL && atual->chave == chave) return;
 
     struct tItem *novo = criarItem(chave);
 
@@ -102,7 +108,7 @@ void removerItem(struct tLista *l, int chave) {
         atual = atual->proximo;
     }
 
-    if (atual == NULL || atual->chave != chave) return;
+    //if (atual == NULL || atual->chave != chave) return;
 
     // inicio
     if (anterior == NULL) {
@@ -132,37 +138,38 @@ int main() {
     int valor;
     struct tLista *A = criarLista();
     struct tLista *B = criarLista();
-    struct tLista *l = NULL;
 
     while(scanf(" %c", &opc) != EOF) {
 
         scanf(" %c", &lst);
 
-        l = NULL;
+        struct tLista *l = NULL;
         if(lst == 'A') l = A;
         else if(lst == 'B') l = B;
-        else continue;
 
         if(opc == 'I' || opc == 'E') {
             scanf("%d", &valor);
+            if(valor < 0) continue;
         }
 
-        switch(opc) {
-            case 'I':
-                inserirItem(l, valor);
-                break;
-
-            case 'E':
-                removerItem(l, valor);
-                break;
-
-            case 'M':
-                mostrarListaInicioFinal(l);
-                break;
-
-            case 'R':
-                mostrarListaFinalInicio(l);
-                break;
+        if (l != NULL) {
+            switch(opc) {
+                case 'I':
+                    inserirItem(l, valor);
+                    break;
+    
+                case 'E':
+                    removerItem(l, valor);
+                    break;
+    
+                case 'M':
+                    mostrarListaInicioFinal(l);
+                    break;
+    
+                case 'R':
+                    mostrarListaFinalInicio(l);
+                    break;
+            }
         }
     }
 
