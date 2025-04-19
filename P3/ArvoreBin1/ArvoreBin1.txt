@@ -1,0 +1,22 @@
+insert 77 
+insert 70 
+insert 83 
+insert 67 
+insert 73 
+insert 80 
+insert 87 
+pre-order 
+insert 65 
+insert 90 
+insert 78 
+in-order 
+delete 80 
+delete 77 
+post-order 
+delete 67 
+delete 73 
+delete 80 
+in-order 
+delete 87 
+delete 78 
+post-order 
